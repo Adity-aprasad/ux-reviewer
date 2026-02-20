@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import API_URL from '../config.js'
 import './styles/Home.css'
 
 const STEPS = [
@@ -31,7 +32,7 @@ export default function Home() {
 
     try {
       setStep(2)
-      const res = await fetch('/api/analyze', {
+      const res = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),

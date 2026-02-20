@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import StatusBadge from '../components/StatusBadge.jsx'
+import API_URL from '../config.js'
 import './styles/Status.css'
 
 export default function Status() {
   const [status, setStatus] = useState(null)
 
   useEffect(() => {
-    fetch('/api/status')
+    fetch(`${API_URL}/api/status`)
       .then(r => r.json())
       .then(setStatus)
       .catch(() => setStatus({ services: [], error: true }))

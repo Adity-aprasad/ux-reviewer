@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import API_URL from '../config.js'
 import './styles/History.css'
 
 export default function History() {
@@ -7,7 +8,7 @@ export default function History() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch('/api/history')
+   fetch(`${API_URL}/api/history`)
       .then(r => r.json())
       .then(setHistory)
       .catch(() => setHistory([]))

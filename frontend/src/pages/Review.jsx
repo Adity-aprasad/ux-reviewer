@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import ScoreCard from '../components/ScoreCard.jsx'
 import CategoryGroup from '../components/CategoryGroup.jsx'
 import IssueModal from '../components/Modal.jsx'
+import API_URL from '../config.js'
 import './styles/Review.css'
 
 export default function Review() {
@@ -13,7 +14,7 @@ export default function Review() {
   const [activeModal, setActiveModal] = useState(null)
 
   useEffect(() => {
-    fetch(`/api/history/${id}`)
+     fetch(`${API_URL}/api/history/${id}`)
       .then(r => r.ok ? r.json() : Promise.reject('Not found'))
       .then(setReview)
       .catch(() => setError('Review not found.'))
