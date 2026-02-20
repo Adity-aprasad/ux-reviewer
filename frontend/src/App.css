@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0b0b0f;
+  color: #e2e2e2;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  display: block; 
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 5%; 
+  height: 64px;
+  background: #13131a;
+  border-bottom: 1px solid #22222e;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.nav-brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #a78bfa;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0d0d12;
+  border: 1px solid #1e1e28;
+  border-radius: 12px;
+  padding: 0.3rem;
+}
+
+
+.nav-item {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-item:hover {
+  background: #1e1e2a;
+  color: #fff;
+}
+
+.nav-item.active {
+  background: #7c6af7;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(124, 106, 247, 0.3);
+}
+
+
+.main-content {
+  max-width: 1000px; 
+  margin: 0 auto;   
+  padding: 3rem 1.5rem;
+  width: 100%;     
+  min-height: calc(100vh - 64px);
+}
+
+/* 5. Responsive Adjustment */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .nav-brand {
+    font-size: 0.9rem;
+  }
+  
+  .nav-item {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}

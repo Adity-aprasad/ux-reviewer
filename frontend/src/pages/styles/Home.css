@@ -1,0 +1,250 @@
+/* 1. GLOBAL RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark: #0b0b0f;
+  --card-bg: #16161e;
+  --accent-purple: #7c6af7;
+  --accent-blue: #38bdf8;
+  --border-color: #2a2a3a;
+  --text-main: #e8e8f0;
+  --text-muted: #666;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden; /* Prevents horizontal scroll from orbs */
+}
+
+/* 2. NAVBAR (Fixed & Centered Contents) */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: #13131a;
+  border-bottom: 1px solid #22222e;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.nav-brand {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent-purple);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #0d0d12;
+  border: 1px solid #1e1e28;
+  border-radius: 12px;
+  padding: 0.25rem;
+}
+
+.nav-item {
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: #1e1e2a;
+  color: #bbb;
+}
+
+.nav-item.active {
+  background: var(--accent-purple);
+  color: #fff;
+}
+
+/* 3. MAIN WRAPPER (Centering the Content) */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto; /* Centers the whole container */
+  width: 100%;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+/* 4. HOME SECTION & ORBS */
+.home {
+  text-align: center;
+  padding: 4rem 0 6rem;
+  position: relative;
+  min-height: calc(100vh - 64px); /* Full height minus navbar */
+  width: 100%;
+}
+
+.home-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-orb-1 {
+  width: 500px; height: 500px;
+  background: rgba(124, 106, 247, 0.12);
+  top: -100px; left: -150px;
+}
+
+.home-orb-2 {
+  width: 400px; height: 400px;
+  background: rgba(56, 189, 248, 0.08);
+  bottom: 50px; right: -100px;
+}
+
+/* 5. HERO COMPONENTS */
+.home-product-name {
+  position: relative;
+  z-index: 1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  background: rgba(124, 106, 247, 0.1);
+  border: 1px solid rgba(124, 106, 247, 0.2);
+  border-radius: 99px;
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.home-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.home-title-accent {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-sub {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 3rem;
+}
+
+/* 6. INPUT CARD */
+.home-card {
+  position: relative;
+  z-index: 2;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 650px;
+  margin: 0 auto 5rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.url-form {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.url-input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #0f0f13;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 0 1.2rem;
+  transition: all 0.2s;
+}
+
+.url-input-wrap:focus-within {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 4px rgba(124, 106, 247, 0.15);
+}
+
+.url-input {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  padding: 1rem 0;
+}
+
+.url-btn {
+  padding: 0 1.8rem;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent-purple), #6050d0);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.url-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* 7. HOW IT WORKS GRID */
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.hiw-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.hiw-card:hover {
+  transform: translateY(-5px);
+  border-color: #3d3d54;
+}
+
+/* 8. RESPONSIVE */
+@media (max-width: 768px) {
+  .url-form { flex-direction: column; }
+  .navbar { padding: 0 1rem; }
+  .home-title { font-size: 2.2rem; }
+  .hiw-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hiw-grid { grid-template-columns: 1fr; }
+}

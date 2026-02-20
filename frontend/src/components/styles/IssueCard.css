@@ -1,0 +1,39 @@
+.issue-card {
+  padding: 1.1rem 1.25rem;
+  background: #0f0f13;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.issue-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.issue-severity {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.issue-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e8e8f0;
+}
+
+.issue-desc {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.issue-proof {
+  font-size: 0.82rem;
+  color: #7c6af7;
+  margin-top: 0.4rem;
+}

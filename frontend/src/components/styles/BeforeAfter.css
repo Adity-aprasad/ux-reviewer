@@ -1,0 +1,42 @@
+.ba-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.ba-panel {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.ba-before {
+  background: #2a1a1a;
+  border: 1px solid #5a2a2a;
+}
+
+.ba-after {
+  background: #1a2a1a;
+  border: 1px solid #2a5a2a;
+}
+
+.ba-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  opacity: 0.7;
+}
+
+.ba-before .ba-label { color: #f87171; }
+.ba-after .ba-label { color: #22c55e; }
+
+.ba-arrow {
+  color: #555;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
