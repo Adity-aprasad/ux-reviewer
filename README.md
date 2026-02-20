@@ -16,7 +16,7 @@ project/
 
 Create `backend/.env`:
 ```
-ANTHROPIC_API_KEY=sk-ant-...
+GEMINI_API_KEY=sk-ant-...
 ```
 
 ### 2. Install & run the backend
